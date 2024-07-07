@@ -23,3 +23,8 @@
 hs_err_pid*
 replay_pid*
 *.pem
+*terraform.tfstate*
+*terraform.tfstate.backup*
+*.tfstate
+*.tfstate.backup
+*.terrform/*
