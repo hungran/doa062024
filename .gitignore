@@ -27,4 +27,5 @@ replay_pid*
 *terraform.tfstate.backup*
 *.tfstate
 *.tfstate.backup
-*.terrform/*
+.terraform.lock.hcl
+.terraform
