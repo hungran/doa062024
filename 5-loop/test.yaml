@@ -1,0 +1,14 @@
+---
+- name: test loop
+  hosts: all
+  become: true
+  become_user: root
+
+  tasks:
+    - name: loop-simulator-preparation
+      ansible.builtin.debug:
+        msg: "{{ item }}"
+      with_list:
+        - one
+        - two
+  

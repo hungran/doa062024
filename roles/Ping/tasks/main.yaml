@@ -1,0 +1,3 @@
+---
+- name: Ping to all hosts
+  ping:

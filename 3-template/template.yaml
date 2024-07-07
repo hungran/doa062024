@@ -1,0 +1,20 @@
+---
+- name: Write hostname
+  become: true
+  become_user: root
+  hosts: all
+  tasks: 
+    - name: Write hostname by jinja2
+      ansible.builtin.template:
+        src: test.j2
+        dest: /tmp/hostname.txt
+        owner: root
+        group: root
+        mode: '0644'
+    - name: Copy file to www
+      ansible.builtin.copy:
+        src: /tmp/hostname.txt
+        dest: /var/www/html/hostname.txt
+        owner: root
+        group: root
+        mode: '0644'

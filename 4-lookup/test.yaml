@@ -1,0 +1,11 @@
+---
+- name: Update web servers
+  hosts: web
+  become: true
+  become_user: root
+
+  vars:
+    motd_value: "Welcome to Codestar-tuyetvoi {{ lookup ('file', '/tmp/hostname.txt')}}"
+  tasks:
+    - debug:
+        msg: "value: {{ motd_value }}"
